@@ -39,7 +39,7 @@ void populate_bound_rows(
 	int j;
 
 	for (j = 0; j < row->num_bound_synxs; j++)
-		SYNX_CONSOLE_LOG(cur, end, "\n\tID: %d",
+		SYNX_CONSOLE_LOG(cur, end, "\n\tID: %llu",
 		row->bound_synxs[j].external_desc.id);
 }
 
