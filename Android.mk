@@ -1,3 +1,7 @@
+# Lineage builds these modules through TARGET_KERNEL_EXT_MODULES.
+# The legacy entry point requires Qualcomm DLKM build infrastructure.
+ifneq ($(wildcard $(TOP)/device/qcom/common/dlkm/Build_external_kernelmodule.mk),)
+
 TARGET_SYNX_ENABLE := false
 ifeq ($(TARGET_KERNEL_DLKM_DISABLE),true)
 	ifeq ($(TARGET_KERNEL_DLKM_SYNX_OVERRIDE),true)
@@ -74,3 +78,5 @@ include $(DLKM_DIR)/Build_external_kernelmodule.mk
 
 
 endif # End of check for TARGET_SYNX_ENABLE
+
+endif # Qualcomm DLKM build infrastructure
